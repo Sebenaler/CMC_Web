@@ -12,7 +12,7 @@
 	String pass = request.getParameter("Password");
 	UserInteraction ui = new UserInteraction();
 	boolean result = ui.login(un, pass);
-	if(result == true)
+	if(result == true && (un != "" && pass != ""))
 	{
 		response.sendRedirect("UserMenu.jsp");
 		session.setAttribute("loggedInUser", un);
